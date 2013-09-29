@@ -25,35 +25,32 @@
                 <img src ="img/logo.png" />
             </div>
 
-            <div class = "large-7 columns" id="header-title">
-                    <h2><font color ="white" align ="center">Let Your Dream to Fly Come True !!</font></h2>
-                <div class = "large-4 large-centered columns">
-                    <a href="register.jsp" class="round button">Register</a>
-                </div>
+            <div class = "large-5 columns" id="header-title">
+                <img src ="img/header.png" />
             </div>
 
             <!--login button-->
             <div class ="large-2 columns" id ="buttonlogin">
-                <a href="#" data-dropdown="drop2" class="small secondary radius button dropdown">Login</a>
-                <ul id="drop2" class="f-dropdown content" data-dropdown-content>
+                <a href="#" data-dropdown="drop2" class="small secondary radius button dropdown">Login/Daftar</a>
+                <ul id="drop2" class="f-dropdown content" width="100px" data-dropdown-content>
                     <label>Username :</label>
                     <input type="text" placeholder="username">
                     <label>Password :</label>
                     <input type="password" placeholder="password">
-                    <a href="#" class="tiny button">Log in</a>
+                    <a href="#" class="tiny button">Log in</a> <br />
+                    <font size ="1">Belum punya akun? <br /><a href ="register.jsp"><u>Sok atuh daftar</u></a></font>
                 </ul>
-
             </div>
 
         </div>
 
-        <div class ="row" style ="height: 50px">
+        <div class ="row collapse" style ="height: 50px">
             <div id ="search-property">
-                <div class ="large-2 large-offset-7 columns">
+                <div class ="large-2 large-offset-5 columns">
                     <input type="text" placeholder="Search">
                 </div>
-                <div class ="large-1 columns">
-                    <a href="#" class="prefix button">Search</a>
+                <div class ="large-1 columns" id ="search-property-button">
+                    <span class="postfix button"><img src ="img/magnifier.png" /></span>
                 </div>
                 <div class ="large-2 columns">
                     <p></p>
@@ -61,42 +58,56 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="large-7 columns">S
+        <div class="row collapse">
+            <div class="large-3 columns" id="fieldsetrow-custom">
+                <form class="custom">
+                    <fieldset id ="fieldset-custom">
+                        <legend><font size ="4">Jadwal</font></legend>
+                        <div class ="row">
+                            <div class="large-1 columns">
+                                <label for="radio1">
+                                    <input name="radio1" type="radio" id="radio1" CHECKED>
+                                        <span class="custom radio checked"></span> Pulang pergi
+                                </label>
+                            </div>
+                            <div class="large-1 columns" style="padding-right: 120px">
+                                <label for="radio1">
+                                    <input name="radio1" type="radio" id="radio1">
+                                        <span class="custom radio"></span> Sekali jalan
+                                </label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label>Full Name</label>  
+                            <input type="text" placeholder="Standard Input" /> 
+                        </div>
 
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="large-5 columns" >
                 <!--orbit view-->
-                <div class="slideshow-wrapper" id = "orbit-custom" align="center">
+                <div class="slideshow-wrapper" id = "orbit-custom">
                     <span class="preloader"></span>
                     <ul id="featured1" data-orbit data-options="pause_on_hover:false; timer_speed:2000; slide_number:true;">
                         <li>
-                            <img src="img/3girls.jpg" />
-                            <div class="orbit-caption">
-                                Lorem ipsum dolor sit amet A
-                            </div>
+                            <img src="img/1.png" />
                         </li>
                         <li>
-                            <img src="img/aurakasih.jpg" />
-                            <div class="orbit-caption">
-                                Lorem ipsum dolor sit amet B
-                            </div>
+                            <img src="img/2.png" />
                         </li>
                         <li>
-                            <img src="img/neng.jpg" />
-                            <div class="orbit-caption">
-                                Lorem ipsum dolor sit amet C
-                            </div>
-                        </li>
-                        <li>
-                            <img src="img/fans.jpg" />
-                            <div class="orbit-caption">
-                                Lorem ipsum dolor sit amet D
-                            </div>
+                            <img src="img/3.png" />
                         </li>
                     </ul>
                 </div>
-
             </div>
 
+            <div class="large-4 columns" id="right-field">
+                <img src ="img/a1.png" />
+            </div>
             <hr />
         </div>
 
