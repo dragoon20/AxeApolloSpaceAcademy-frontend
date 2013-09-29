@@ -10,7 +10,7 @@
 
 html{
     background-size: cover;
-    background: url(../img/bg.jpg) no-repeat center center fixed; 
+    background: url(../img/nightsky.jpg) no-repeat center center fixed; 
     background-size: cover;
 }
 
@@ -36,18 +36,33 @@ body{
 }    
 
 #orbit-custom{
-    left : 500px;
+    padding-top: 26px;
 }
 
 #search-property{
-    
+    padding-left : 180px;
+}
+
+#search-property-button{
+    padding-right : 60px;
 }
 
 #buttonlogin{
-    float : right;
-    padding-right: 50px;
+    padding-right: 350px;
 }
 
 #logopreview{
     padding-left : 50px;
+}
+
+#fieldset-custom{
+    background-color: #dad9c2;
+}
+
+#fieldsetrow-custom{
+    padding : 0px 0px 0px 50px;
+}
+
+#right-field{
+    padding : 20px 0px 0px 100px;
 }
