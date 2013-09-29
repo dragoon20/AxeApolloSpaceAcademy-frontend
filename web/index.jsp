@@ -10,10 +10,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" media="screen" href="css/foundation.css">
+        <link rel="stylesheet" media="screen" href="css/datepicker.css">
         <link rel="stylesheet" media="screen" href="css/style.css">
-        <script src="js/jquery.js"></script>
-        <script src="js/foundation.min.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/foundation.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <title>AASA</title>
+        <!--jquery-->
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                $('.datepicker').datepicker();
+            });
+            $(document)
+            .foundation('orbit', {
+                bullets: false
+            }, function(response){
+                console.log(response.errors);
+            });
+        </script>
     </head>
     <body>
 
@@ -67,20 +81,24 @@
                             <div class="large-1 columns">
                                 <label for="radio1">
                                     <input name="radio1" type="radio" id="radio1" CHECKED>
-                                        <span class="custom radio checked"></span> Pulang pergi
+                                    <span class="custom radio checked"></span> Pulang pergi
                                 </label>
                             </div>
                             <div class="large-1 columns" style="padding-right: 120px">
                                 <label for="radio1">
                                     <input name="radio1" type="radio" id="radio1">
-                                        <span class="custom radio"></span> Sekali jalan
+                                    <span class="custom radio"></span> Sekali jalan
                                 </label>
                             </div>
                         </div>
                         <br />
                         <div class="row">
-                            <label>Full Name</label>  
-                            <input type="text" placeholder="Standard Input" /> 
+                            <input type="text" placeholder="Asal" /> 
+                            <input type="text" placeholder="Tujuan" /> 
+                            <input type="text" class="datepicker" placeholder="Tanggal Berangkat">
+                            <input type="text" class="datepicker" placeholder="Tanggal Kembali">
+                            <input type="text" placeholder="Mata Uang" /> 
+                            <a href="schedule.jsp" class="tiny button" style="float : right">Cari</a> <br />
                         </div>
 
                     </fieldset>
@@ -89,7 +107,7 @@
 
             <div class="large-5 columns" >
                 <!--orbit view-->
-                <div class="slideshow-wrapper" id = "orbit-custom">
+                <div class="row collapse slideshow-wrapper" id = "orbit-custom">
                     <span class="preloader"></span>
                     <ul id="featured1" data-orbit data-options="pause_on_hover:false; timer_speed:2000; slide_number:true;">
                         <li>
@@ -103,6 +121,12 @@
                         </li>
                     </ul>
                 </div>
+                <div class ="row collapse">
+                    <hr />
+                </div>
+                <div class ="row collapse">
+                    <img src="img/kualalumpur1.jpg" />
+                </div>    
             </div>
 
             <div class="large-4 columns" id="right-field">
@@ -111,6 +135,9 @@
             <hr />
         </div>
 
+        <div class="row">
+            <font color="white" style ="padding-left :1200px">&copy; 2013 Badut.Inc</font>
+        </div>
         <script>
             $(document).foundation();
         </script>

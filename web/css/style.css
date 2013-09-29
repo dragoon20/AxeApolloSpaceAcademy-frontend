@@ -24,6 +24,10 @@ body{
     max-width : 100% !important;
 }
 
+.orbit-container > ol{
+    bottom : 350px;
+}
+
 .orbit-container > .orbit-slide-number
 {
     color: black;
@@ -36,7 +40,7 @@ body{
 }    
 
 #orbit-custom{
-    padding-top: 26px;
+    padding-top: 27px;
 }
 
 #search-property{
