@@ -1,0 +1,21 @@
+2013-09-24 00:12:46,370 - [INFO] - from play in pool-4-thread-1 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-09-24 00:12:48,577 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-09-24 00:12:48,682 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-09-24 00:14:53,344 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-09-24 00:14:53,354 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-09-24 00:15:02,696 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-09-24 00:15:02,707 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
