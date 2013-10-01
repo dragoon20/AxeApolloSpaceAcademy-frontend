@@ -1,0 +1,12 @@
+#sidebar
+{
+    width: 250px;
+    padding: 10px;
+    background-color: yellow;
+}
+
+.choice
+{
+    float: left;
+    margin-right: 15px;
+}

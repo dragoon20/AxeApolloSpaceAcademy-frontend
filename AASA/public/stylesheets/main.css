@@ -1,0 +1,74 @@
+body
+{
+    background-size: cover;
+}
+
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+.clear
+{
+    clear: both;
+}
+
+#wrapper
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header
+{
+    background-color: gray;
+}
+#logo
+{
+    float: left;
+}
+#title-area
+{
+    width: 490px;
+    margin: 0 auto;
+    padding-top: 40px;
+    text-align: right;
+}
+#title a, #subtitle
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#title
+{
+    font-size: 46px;
+}
+#subtitle
+{
+    font-size: 20px;
+    font-style: oblique;
+}
+#login
+{
+    float: right;
+    background-color: #FFFFFF;
+    padding: 5px;
+    margin-top: 30px;
+    margin-right: 80px;
+}
+
+#content
+{
+    background-color: #DEDEDE;
+    padding: 10px;
+}
+
+#footer
+{
+    height: 100px;
+    padding: 10px;
+    background-color: cyan;
+}

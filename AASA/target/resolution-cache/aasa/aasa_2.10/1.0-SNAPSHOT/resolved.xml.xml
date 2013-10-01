@@ -4,7 +4,7 @@
 		module="aasa_2.10"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20130923234926"
+		publication="20130930203210"
 	>
 		<description>
 		AASA
@@ -37,6 +37,7 @@
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.10" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ebean_2.10" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.0" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.18" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.0" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.0" conf="docs->default(compile)"/>

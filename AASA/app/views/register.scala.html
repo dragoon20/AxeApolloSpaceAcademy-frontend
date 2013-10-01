@@ -1,0 +1,32 @@
+@(anggotaForm: Form[Anggota])
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy - register") {
+
+
+    <div id="content">
+        @helper.form(action = routes.Application.newAnggota(), 'class->"form-horizontal") {
+
+            <div class="form-title">Daftar</div>
+
+            @helper.inputText(anggotaForm("nama"), '_label -> "Nama", '_showConstraints -> false, 'class -> "form-control")
+            @helper.inputPassword(anggotaForm("sandi"), '_label -> "Sandi", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputPassword(anggotaForm("konfirmasi_sandi"), '_label -> "Konfirmasi Sandi", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputText(anggotaForm("email"), '_label -> "Alamat Email", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputText(anggotaForm("no_handphone"), '_label -> "Nomor Handphone", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputText(anggotaForm("alamat"), '_label -> "Alamat", '_showConstraints ->false, 'class -> "form-control")
+
+            <div class="form-group">
+                <div class="submit">
+                    <button type="submit" class="btn btn-primary">Daftar</button>
+                </div>
+            </div>
+        }
+    </div>
+
+} {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/form.css")">
+} {
+}
+

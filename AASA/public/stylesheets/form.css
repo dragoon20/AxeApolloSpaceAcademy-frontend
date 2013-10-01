@@ -1,0 +1,18 @@
+.control-label
+{
+    text-align: left !important;
+}
+
+.form-title
+{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.submit button
+{
+    display: block;
+    margin: 0 auto;
+}

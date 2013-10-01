@@ -1,21 +1,69 @@
-2013-09-24 00:12:46,370 - [INFO] - from play in pool-4-thread-1 
+2013-10-01 16:10:36,202 - [INFO] - from play in pool-4-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2013-09-24 00:12:48,577 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-01 16:10:48,995 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:mysql://localhost/AASA
 
-2013-09-24 00:12:48,682 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-01 16:10:50,238 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-24 00:14:53,344 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-01 16:19:54,391 - [INFO] - from play in play-internal-execution-context-2 
 database [default] connected at jdbc:mysql://localhost/AASA
 
-2013-09-24 00:14:53,354 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-01 16:19:54,564 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-24 00:15:02,696 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-01 16:21:29,354 - [INFO] - from play in play-internal-execution-context-2 
 database [default] connected at jdbc:mysql://localhost/AASA
 
-2013-09-24 00:15:02,707 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-01 16:21:29,508 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-01 16:21:56,244 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:21:56,345 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-01 16:34:06,015 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:34:06,084 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-01 16:35:50,730 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:35:50,888 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-01 16:37:25,085 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:37:25,221 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-01 16:37:53,326 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:37:53,440 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-01 16:39:26,520 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:39:26,586 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2013-10-01 16:41:03,833 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:41:03,960 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2013-10-01 16:41:37,161 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-01 16:41:37,318 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 

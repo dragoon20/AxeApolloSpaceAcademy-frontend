@@ -1,0 +1,26 @@
+.penerbangan
+{
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 20px;
+    margin: 10px 0;
+}
+.nama-penerbangan
+{
+    float: left;
+    width: 300px;
+    font-size: 26px;
+    color: #3333DD;
+    font-weight: bold;
+    line-height:50px;
+}
+.status-berangkat
+{
+    float: left;
+    width: 200px;
+}
+.status-tiba
+{
+    float: left;
+    width: 200px;
+}

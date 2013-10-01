@@ -1,0 +1,29 @@
+@(loginForm: Form[Application.Login])
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy") {
+    <div id="main-content">
+
+    </div>
+    <div id="sidebar">
+        @helper.form(action = routes.Application.doLogin()) {
+
+            <div class="form-title">Login</div>
+
+            @helper.inputText(loginForm("email"), '_label -> "Alamat Email", '_showConstraints -> false, 'class -> "form-control")
+            @helper.inputPassword(loginForm("sandi"), '_label -> "Sandi", '_showConstraints ->false, 'class -> "form-control")
+
+            <div class="form-group">
+                <div class="submit">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="clear"></div>
+} {
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/form.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+} {
+}

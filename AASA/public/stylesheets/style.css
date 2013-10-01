@@ -1,0 +1,71 @@
+/* 
+    Document   : style
+    Created on : Sep 20, 2013, 10:33:04 AM
+    Author     : Vincentius Martin
+    Description:
+        overwriting some code from zurb library.
+*/
+
+/*overwrite*/
+
+html{
+
+    background-size: cover;
+}
+
+body{
+     background: transparent !important;    
+}
+
+.row { 
+    background-color: transparent;
+    width:  100% !important;
+    max-width : 100% !important;
+}
+
+.orbit-container > ol{
+    background-color: gray;
+}
+
+.orbit-container > .orbit-slide-number
+{
+    color: black;
+    font-weight: bold;
+}
+
+/*custom*/
+#header-title{
+    padding : 30px 0px 0px 0px;
+}    
+
+#orbit-custom{
+    padding-top: 27px;
+}
+
+#search-property{
+    padding-left : 180px;
+}
+
+#search-property-button{
+    padding-right : 60px;
+}
+
+#buttonlogin{
+    padding-right: 350px;
+}
+
+#logopreview{
+    padding-left : 50px;
+}
+
+#fieldset-custom{
+    background-color: #dad9c2;
+}
+
+#fieldsetrow-custom{
+    padding : 0px 0px 0px 50px;
+}
+
+#right-field{
+    padding : 20px 0px 0px 100px;
+}

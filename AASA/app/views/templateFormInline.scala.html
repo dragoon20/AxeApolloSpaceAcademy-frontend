@@ -1,0 +1,16 @@
+@(elements: views.html.helper.FieldElements)
+
+@import helper.twitterBootstrap._
+
+<div class="form-group @if(elements.hasErrors) {error}">
+    <label class="col-lg-4 control-label" for="@elements.id">@elements.label</label>
+    <div class="col-lg-8">
+        @elements.input
+        @if(elements.hasErrors) {
+            <span class="help-inline">@elements.errors.mkString(", ")</span>
+        } else {
+            <span class="help-inline">@elements.infos.mkString(", ")</span>
+        }
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,7 +1,150 @@
-@(message: String)
+@(bandaras: List[Bandara], pencarianForm: Form[Pencarian], isLogin: String)
 
-@main("Axe Appolo Space Academy") {
+@implicitField = @{ views.html.helper.FieldConstructor(templateForm.f) }
 
-    @play20.welcome(message, style = "Java")
+@main("Axe Appolo Space Academy", isLogin) {
+    <div id="sidebar">
+        @helper.form(action = routes.Application.search()) {
 
+            <div class="choice">
+                <input name="sekali_jalan" type="radio" id="pulang_pergi" value="1">
+                <label for="pulang_pergi">Pulang pergi</label>
+            </div>
+            <div class="choice">
+                <input name="sekali_jalan" type="radio" id="sekali_jalan" value="0">
+                <label for="sekali_jalan">Sekali jalan</label>
+            </div>
+            <div class="clear"></div>
+
+            @helper.inputText(pencarianForm("asal"), '_label -> "Asal", '_showConstraints -> false, 'class -> "form-control")
+            @helper.inputText(pencarianForm("tujuan"), '_label -> "Tujuan", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputText(pencarianForm("tanggal_berangkat"), '_label -> "Tanggal Berangkat", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputText(pencarianForm("tanggal_kembali"), '_label -> "Tanggal Kembali", '_showConstraints ->false, 'class -> "form-control")
+
+            <div class="right">
+                <button type="submit" class="btn btn-primary">Cari</button>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+    <script>
+        $.widget( "custom.catcomplete", $.ui.autocomplete, {
+            _renderMenu: function( ul, items ) {
+                var that = this;
+                currentCategory = "";
+                var count = 0;
+                for (var i=0;i<items.length;++i)
+                {
+                    var item = items[i];
+                    if ( item.category != currentCategory ) {
+                        ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+                        currentCategory = item.category;
+                        count++;
+                    }
+                    that._renderItemData( ul, item );
+                    count++;
+                    if (count > 7)
+                    {
+                        count = 0;
+                    }
+                }
+            },
+        });
+        $(document).ready(function() {
+            if ($("input[name=sekali_jalan]:radio").val()==0) {
+                $('#tanggal_kembali').parent().parent().hide();
+            }
+            else {
+                $('#tanggal_kembali').parent().parent().show();
+            }
+        });
+        $(function() {
+
+            var data = [
+                @for(bandara <- bandaras) {
+                    { label: "@bandara.nama (@bandara.kode)", category: "@bandara.daerah"},
+                }
+            ];
+            $("#asal").catcomplete({
+                minLength: 1,
+                delay: 0,
+                autoFocus: true,
+                source: data,
+                select: function(event, ui)
+                {
+                    $("#tujuan").focus();
+                }
+            });
+            $("#tujuan").catcomplete({
+                minLength: 1,
+                delay: 0,
+                autoFocus: true,
+                source: data,
+                select: function(event, ui)
+                {
+                    $("#tanggal_berangkat").focus();
+                }
+            });
+
+            $("#asal").focus(function () {
+                $("#asal").catcomplete("search", "");
+            });
+
+            $("#tujuan").focus(function () {
+                $("#tujuan").catcomplete("search", "");
+            });
+
+            var now = new Date();
+            var maxDate = new Date();
+            maxDate.setYear(now.getFullYear() + 1);
+
+            $("#tanggal_berangkat").datepicker({
+                minDate: now,
+                maxDate: maxDate,
+                numberOfMonths: 2,
+                showButtonPanel: true,
+                onSelect: function(dateText, inst)
+                {
+                    $("#tanggal_kembali").datepicker("option", "minDate", new Date(dateText));
+                    setTimeout(function()
+                    {
+                        $("#tanggal_kembali").focus();
+                    }, 100);
+                }
+            });
+            $("#tanggal_kembali").datepicker({
+                minDate: now,
+                maxDate: maxDate,
+                numberOfMonths: 2,
+                showButtonPanel: true
+            });
+            $("input[name=sekali_jalan]:radio").change(function() {
+                if ($(this).val()==0) {
+                    $('#tanggal_kembali').parent().parent().hide();
+                }
+                else {
+                    $('#tanggal_kembali').parent().parent().show();
+                }
+            });
+        });
+    </script>
+} {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">
+    <style>
+        .ui-autocomplete-category {
+            font-weight: bold;
+            padding: .2em .2em;
+            margin: 0;
+            line-height: 1.5;
+            color: #1AB2D4;
+            background-color: #DEDEDE;
+        }
+        .ui-autocomplete {
+            max-height: 300px;
+            overflow-y: auto;
+            /* prevent horizontal scrollbar */
+            overflow-x: hidden;
+        }
+    </style>
+} {
 }

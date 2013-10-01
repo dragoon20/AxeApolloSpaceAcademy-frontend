@@ -1,0 +1,21 @@
+#main-content
+{
+    float: left;
+    width: 600px;
+    height: 600px;
+    padding: 10px;
+    background-color: blue;
+}
+
+#sidebar
+{
+    float: left;
+    width: 380px;
+    padding: 10px;
+    background-color: yellow;
+}
+
+.control-label
+{
+    line-height: 35px;
+}

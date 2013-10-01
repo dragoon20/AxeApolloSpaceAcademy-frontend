@@ -1,0 +1,31 @@
+@(penerbangans: List[Penerbangan], isLogin: String)
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateForm.f) }
+
+@main("Axe Appolo Space Academy", isLogin) {
+    @for(penerbangan <- penerbangans) {
+        <div class="penerbangan">
+            <div class="nama-penerbangan">
+                @penerbangan.kode_penerbangan
+            </div>
+            <div class="status-penerbangan">
+                <div class="status-berangkat">
+                    @penerbangan.jam_berangkat <br />
+                    @penerbangan.bandara_asal.nama
+                </div>
+                <div class="status-tiba">
+                    @penerbangan.jam_tiba <br />
+                    @penerbangan.bandara_tujuan.nama
+                </div>
+            </div>
+            <div class="harga-penerbangan">
+                @penerbangan.harga
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+
+} {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/search.css")">
+} {
+}
