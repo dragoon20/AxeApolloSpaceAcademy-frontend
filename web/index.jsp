@@ -30,7 +30,6 @@
         </script>
     </head>
     <body>
-
         <!--first row-->
         <div class ="row" style ="height: 200px"> 
 
