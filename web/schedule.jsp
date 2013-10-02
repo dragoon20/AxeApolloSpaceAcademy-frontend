@@ -50,9 +50,13 @@
                     </tbody>
                 </table>
                 <div style="padding-left: 150px">
-                    <a href="#" class="medium round button">Submit</a>
+                    <a href="filldata.jsp" class="medium round button">Submit</a>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <hr />
+            <font color="white" style ="float:right;padding-right:20px;">&copy; 2013 Badut.Inc</font>
         </div>
         <script>
             $(document).foundation();

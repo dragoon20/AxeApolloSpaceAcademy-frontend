@@ -24,17 +24,31 @@
             </div>
         </div>
 
-        <div class ="row" style="height: 400px">
+        <div class ="row" style="height: 400px; padding-top: 20px;" >
             <div class="large-7 columns" style="background-color: lightgray">
                 <form class="custom">
-                    <div class large-2 columns>
-                        <label><font size=2px>Nama Lengkap :</font></label>
-                    </div>
-                    <div class large-4 columns>
-                        <input type="text" placeholder="nama" />
+                    <div style="padding-top: 20px">
+                        <h3>Member Registration Form</h3>
+                        <input type="text" placeholder="Email" />
+                        <input type="password" placeholder="Sandi" />
+                        <input type="password" placeholder="Konfirmasi Sandi" />
+                        <input type="text" placeholder="Nama Lengkap" />
+                        <input type="text" placeholder="No Telephone" />
+                        <input type="text" placeholder="Alamat" style="height:10%" />
+                        <a href="emailverification.jsp" class="tiny round button">Submit</a>
                     </div>
                 </form>
             </div>
         </div>
+        <div class="row">
+            <br />
+        </div>
+        <div class="row">
+            <hr />
+            <font color="white" style ="float:right;padding-right:20px;">&copy; 2013 Badut.Inc</font>
+        </div>
+        <script>
+            $(document).foundation();
+        </script>
     </body>
 </html>

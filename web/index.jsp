@@ -34,16 +34,16 @@
         <div class ="row" style ="height: 200px"> 
 
             <!--logo-->
-            <div class = "large-3 columns" id ="logopreview">
+            <div class = "small-offset-1 medium-offset-1 large-offset-1 large-3 medium-3 small-3 columns">
                 <img src ="img/logo.png" />
             </div>
 
-            <div class = "large-5 columns" id="header-title">
+            <div class = "large-5 medium-5 small-5 columns" id="header-title">
                 <img src ="img/header.png" />
             </div>
 
             <!--login button-->
-            <div class ="large-2 columns" id ="buttonlogin">
+            <div class ="large-2 medium-2 small-2 columns" style="float:left;">
                 <a href="#" data-dropdown="drop2" class="small secondary radius button dropdown">Login/Daftar</a>
                 <ul id="drop2" class="f-dropdown content" width="100px" data-dropdown-content>
                     <label>Username :</label>
@@ -59,31 +59,28 @@
 
         <div class ="row collapse" style ="height: 50px">
             <div id ="search-property">
-                <div class ="large-2 large-offset-5 columns">
+                <div class ="large-2 medium-2 small-2 small-offset-0 medium-offset-0 large-offset-6  columns">
                     <input type="text" placeholder="Search">
                 </div>
-                <div class ="large-1 columns" id ="search-property-button">
-                    <span class="postfix button"><img src ="img/magnifier.png" /></span>
-                </div>
-                <div class ="large-2 columns">
-                    <p></p>
+                <div class ="large-1 medium-1 small-1 columns" style="float:left;">
+                    <span class="postfix button" style="width:50px;"><img src ="img/magnifier.png" /></span>
                 </div>
             </div>
         </div>
 
         <div class="row collapse">
-            <div class="large-3 columns" id="fieldsetrow-custom">
+            <div class="small-offset-1 medium-offset-1 large-offset-1 large-3 medium-3 small-3 columns">
                 <form class="custom">
                     <fieldset id ="fieldset-custom">
                         <legend><font size ="4">Jadwal</font></legend>
                         <div class ="row">
-                            <div class="large-1 columns">
+                            <div class="large-1 medium-1 small-1 columns">
                                 <label for="radio1">
                                     <input name="radio1" type="radio" id="radio1" CHECKED>
                                     <span class="custom radio checked"></span> Pulang pergi
                                 </label>
                             </div>
-                            <div class="large-1 columns" style="padding-right: 120px">
+                            <div class="large-1 medium-1 small-1 columns" style="padding-right: 50px;">
                                 <label for="radio1">
                                     <input name="radio1" type="radio" id="radio1">
                                     <span class="custom radio"></span> Sekali jalan
@@ -104,7 +101,7 @@
                 </form>
             </div>
 
-            <div class="large-5 columns" >
+            <div class="small-offset-1 medium-offset-1 large-offset-1 large-4 medium-4 small-4 columns" >
                 <!--orbit view-->
                 <div class="row collapse slideshow-wrapper" id = "orbit-custom">
                     <span class="preloader"></span>
@@ -126,16 +123,13 @@
                 <div class ="row collapse">
                     <img src="img/kualalumpur1.jpg" />
                 </div>    
-            </div>
-
-            <div class="large-4 columns" id="right-field">
-                <img src ="img/a1.png" />
+                <br />
             </div>
             <hr />
         </div>
 
         <div class="row">
-            <font color="white" style ="padding-left :1200px">&copy; 2013 Badut.Inc</font>
+            <font color="white" style ="float:right;padding-right:20px;">&copy; 2013 Badut.Inc</font>
         </div>
         <script>
             $(document).foundation();
