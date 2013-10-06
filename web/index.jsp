@@ -15,6 +15,7 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/foundation.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <title>AASA</title>
         <!--jquery-->
         <script type="text/javascript" charset="utf-8">
@@ -45,14 +46,14 @@
             <!--login button-->
             <div class ="large-2 medium-2 small-2 columns" style="float:left;">
                 <a href="#" data-dropdown="drop2" class="small secondary radius button dropdown">Login/Daftar</a>
-                <ul id="drop2" class="f-dropdown content" width="100px" data-dropdown-content>
+                <div id="drop2" class="f-dropdown content" data-dropdown-content>
                     <label>Username :</label>
                     <input type="text" placeholder="username">
                     <label>Password :</label>
                     <input type="password" placeholder="password">
                     <a href="#" class="tiny button">Log in</a> <br />
                     <font size ="1">Belum punya akun? <br /><a href ="register.jsp"><u>Sok atuh daftar</u></a></font>
-                </ul>
+                </div>
             </div>
 
         </div>
@@ -76,14 +77,14 @@
                         <div class ="row">
                             <div class="large-1 medium-1 small-1 columns">
                                 <label for="radio1">
-                                    <input name="radio1" type="radio" id="radio1" CHECKED>
-                                    <span class="custom radio checked"></span> Pulang pergi
+                                    <input name="radio1" type="radio" id="radio1a" CHECKED>
+                                    <span class="custom radio checked" id="radio1" onclick="flightOption('true')"></span> Pulang pergi
                                 </label>
                             </div>
                             <div class="large-1 medium-1 small-1 columns" style="padding-right: 50px;">
                                 <label for="radio1">
-                                    <input name="radio1" type="radio" id="radio1">
-                                    <span class="custom radio"></span> Sekali jalan
+                                    <input name="radio1" type="radio" id="radio1b">
+                                    <span class="custom radio" id="radio1" onclick="flightOption('false')"></span> Sekali jalan
                                 </label>
                             </div>
                         </div>
@@ -91,8 +92,14 @@
                         <div class="row">
                             <input type="text" placeholder="Asal" /> 
                             <input type="text" placeholder="Tujuan" /> 
-                            <input type="text" class="datepicker" placeholder="Tanggal Berangkat">
-                            <input type="text" class="datepicker" placeholder="Tanggal Kembali">
+                            <div class="row">
+                                <div class="large-6 medium-6 small-6 columns">
+                                    <input type="text" class="datepicker" placeholder="Keberangkatan">
+                                </div>
+                                <div class="large-6 medium-6 small-6 columns">
+                                    <input id="tanggal-kembali" type="text" class="datepicker" placeholder="Kembali">
+                                </div>
+                            </div>
                             <input type="text" placeholder="Mata Uang" /> 
                             <a href="schedule.jsp" class="tiny button" style="float : right">Cari</a> <br />
                         </div>
