@@ -1,0 +1,110 @@
+@(pemesanForm: Form[Pemesan], jumlahPenumpang: Long, pemesanan: Pemesanan, idPemesan: Integer, isLogin: String)
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy - Isi data penumpang", isLogin) {
+
+    <div class="main-content">
+        <div class="content-title">Pengisian data pemesan</div>
+        @helper.form(action = routes.Booking.addOrderer(), 'id -> "pemesanForm") {
+            <input name="pemesanan_id" type="hidden" value="@pemesanan.id" />
+            <input name="id" type="hidden" value="@idPemesan" />
+            @helper.inputText(pemesanForm("nama"), '_label -> "Nama", '_showConstraints -> false, 'class -> "form-control")
+            @helper.inputText(pemesanForm("email"), '_label -> "Alamat Email", '_showConstraints ->false, 'class -> "form-control")
+            @helper.inputText(pemesanForm("no_handphone"), '_label -> "No. Handphone", '_showConstraints ->false, 'class -> "form-control")
+
+            <div class="right">
+                <button id="submit-pemesan" type="submit" class="btn btn-primary">Lanjutkan</button>
+            </div>
+        }
+
+        <div class="clear"></div>
+    </div>
+    <script type="text/javascript">
+        var jumlah = @jumlahPenumpang;
+        var check = true;
+        $(document).ready(function() {
+            var parent = $("#no_handphone").parent();
+            parent.addClass("input-group");
+            parent.prepend('<span class="input-group-addon">+62</span>');
+        });
+        $("#submit-pemesan").click(function(e) {
+            e.preventDefault();
+            if (check)
+            {
+                $.post("ordererData", $("#pemesanForm").serialize(), function (data) {
+                    if (data["status"]=="success")
+                    {
+                        var content = '';
+                        content += '<div class="main-content">';
+                            content += '<div class="content-title">Pengisian data penumpang</div>';
+                            for (var i=0;i<jumlah;++i)
+                            {
+                                content += '<form id="penumpangForm_'+i+'" action="/passengerData" method="POST" class="penumpangForm">';
+                                    content += '<input name="pemesanan_id" type="hidden" value="@pemesanan.id" />';
+                                    content += '<div class="form-group ">';
+                                        content += '<label class="col-lg-4 control-label" for="titel_'+i+'">Titel</label>';
+                                        content += '<div class="col-lg-8">';
+                                            content += '<select id="titel_'+i+'" name="titel" class="form-control">';
+                                                content += '<option value="Tuan">Tuan</option>';
+                                                content += '<option value="Nyonya">Nyonya</option>';
+                                                content += '<option value="Nona">Nona</option>';
+                                            content += '</select>';
+                                            content += '<span class="help-inline"></span>';
+                                        content += '</div>';
+                                    content += '<div class="clear"></div>';
+                                        content += '</div>';
+                                    content += '<div class="form-group ">';
+                                        content += '<label class="col-lg-4 control-label" for="nama'+i+'">Nama Lengkap Penumpang</label>';
+                                        content += '<div class="col-lg-8">';
+                                            content += '<input id="nama'+i+'" type="text" name="nama" value="" class="form-control">';
+                                            content += '<span class="help-inline"></span>';
+                                        content += '</div>';
+                                        content += '<div class="clear"></div>';
+                                    content += '</div>';
+                                content += '</form>';
+                            }
+                            content += '<div class="right">';
+                                content += '<button id="submit-penumpang" type="submit" class="btn btn-primary">Pesan</button>';
+                            content += '</div>';
+                            content += '<div class="clear"></div>';
+                        content += '</div>';
+
+                        $(".main-content").after(content);
+                        $("#submit-pemesan").hide();
+                        $("#submit-penumpang").click(function(e) {
+                            e.preventDefault();
+                            $.post("ordererData", $("#pemesanForm").serialize());
+                            for (var i=0;i<jumlah;++i)
+                            {
+                                $.post("passengerData", $("#penumpangForm_"+i).serialize());
+                            }
+                            setTimeout(function() {
+                                window.location = "/payment?id=@pemesanan.id";
+                            }, 300);
+                        });
+                        check = false;
+                    }
+                    else
+                    {
+                        alert("Pemesanan gagal, silahkan coba lagi.");
+                        location.reload();
+                    }
+                });
+            }
+        });
+    </script>
+} {
+    <style>
+        .main-content
+        {
+            background-color: #DEDEDE;
+            padding: 10px;
+        }
+        .main-content:nth-child(even)
+        {
+            margin-top: 15px;
+        }
+    </style>
+} {
+}

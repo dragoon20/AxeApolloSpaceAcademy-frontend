@@ -1,12 +1,128 @@
 #sidebar
 {
-    width: 250px;
+    width: 270px;
+    padding: 15px;
+    background-color: #DEDEDE;
+    float: left;
+}
+
+#content-main
+{
+    width: 700px;
     padding: 10px;
-    background-color: yellow;
+    margin-left: 10px;
+    float: left;
 }
 
 .choice
 {
     float: left;
     margin-right: 15px;
+}
+
+#content_wrap
+{
+	height: 400px;
+	background-color: white;
+	position: relative;
+	overflow: hidden;
+}
+#content_wrap_inner
+{
+	float: left;
+	position: relative;
+	width: 100000px;
+	left: 0;
+
+	transition-property: left;
+	transition-duration: 0.6s;
+	transition-timing-function: linear;
+	-moz-transition-property: left;
+	-moz-transition-duration: 0.6s;
+	-moz-transition-timing-function: linear;
+	-ms-transition-property: left;
+	-ms-transition-duration: 0.6s;
+	-ms-transition-timing-function: linear;
+	-webkit-transition-property: left;
+	-webkit-transition-duration: 0.6s;
+	-webkit-transition-timing-function: linear;
+	-o-transition-property: left;
+	-o-transition-duration: 0.6s;
+	-o-transition-timing-function: linear;
+}
+
+#slide_left, #slide_right
+{
+	position: absolute;
+	z-index: 100;
+	width: 20px;
+	height: 36px;
+	top: 180px;
+	opacity: 0;
+
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: linear;
+	-moz-transition-property: opacity;
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: linear;
+	-ms-transition-property: opacity;
+	-ms-transition-duration: 0.3s;
+	-ms-transition-timing-function: linear;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: linear;
+	-o-transition-property: opacity;
+	-o-transition-duration: 0.3s;
+	-o-transition-timing-function: linear;
+}
+#slide_left
+{
+	left: 20px;
+	background: url(../images/arrow-left.png);
+}
+#slide_right
+{
+	right: 20px;
+	background: url(../images/arrow-right.png);
+}
+#slide_left:hover, #slide_right:hover
+{
+	background-position: 0 -36px;
+}
+#slide_left:active, #slide_right:active
+{
+	background-position: 0 -72px;
+}
+.slide_item
+{
+	width: 680px;
+	height: 385px;
+	margin-right: 16px;
+}
+#slide_bullet
+{
+	width: 75px;
+	margin: 0 auto;
+	text-align: center;
+}
+.bullet_slide
+{
+	background: none repeat scroll 0 0 #ACACAC;
+	cursor: pointer;
+	font-size: 5px;
+	margin: 0 4px;
+	float: left;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	top: 3px;
+
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.bullet_slide.active
+{
+	background: none repeat scroll 0 0 #FF4C00;
 }

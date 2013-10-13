@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for aasa#aasa_2.10;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@110e5775[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@55206928[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
@@ -755,15 +755,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving mysql#mysql-connector-java;5.1.18 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: mysql#mysql-connector-java;5.1.18 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: mysql#mysql-connector-java;5.1.18[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: mysql#mysql-connector-java;5.1.18[0m
-[0m[[0mdebug[0m] [0m	found mysql#mysql-connector-java;5.1.18 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
@@ -1188,10 +1179,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
@@ -1617,10 +1604,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-test_2.10;2.2.0 [test->default(compile)][0m
@@ -2969,10 +2952,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for aasa#aasa_2.10;1.0-SNAPSHOT [optional][0m
@@ -3400,10 +3379,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for aasa#aasa_2.10;1.0-SNAPSHOT [optional][0m
@@ -3831,10 +3806,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.0->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->mysql#mysql-connector-java;5.1.18 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies aasa#aasa_2.10;1.0-SNAPSHOT->com.typesafe.play#play-test_2.10;2.2.0 [test->default(compile)][0m
@@ -5008,7 +4979,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.0!play-java-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ebean_2.10;2.2.0!play-java-ebean_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.10;2.2.0!play-cache_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] mysql#mysql-connector-java;5.1.18!mysql-connector-java.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.0!play_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.0!play-java_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.0!play-jdbc_2.10.jar[0m
@@ -5130,7 +5100,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4478ms :: artifacts dl 101ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 7059ms :: artifacts dl 139ms[0m
 [0m[[0mdebug[0m] [0m	report for aasa#aasa_2.10;1.0-SNAPSHOT compile produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/target/resolution-cache/reports/aasa-aasa_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for aasa#aasa_2.10;1.0-SNAPSHOT runtime produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/target/resolution-cache/reports/aasa-aasa_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for aasa#aasa_2.10;1.0-SNAPSHOT test produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/target/resolution-cache/reports/aasa-aasa_2.10-test.xml[0m
@@ -5144,5 +5114,5 @@
 [0m[[0mdebug[0m] [0m	report for aasa#aasa_2.10;1.0-SNAPSHOT docs produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/target/resolution-cache/reports/aasa-aasa_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for aasa#aasa_2.10;1.0-SNAPSHOT pom produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/target/resolution-cache/reports/aasa-aasa_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for aasa#aasa_2.10;1.0-SNAPSHOT scala-tool produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/target/resolution-cache/reports/aasa-aasa_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4478ms resolve - 101ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (7059ms resolve - 139ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

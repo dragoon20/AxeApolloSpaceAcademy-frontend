@@ -14,7 +14,7 @@ import javax.persistence.Id;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class Pencarian extends Model {
+public class Log_Pencarian extends Model {
 
     @Id
     public Integer id;
@@ -34,10 +34,16 @@ public class Pencarian extends Model {
     @Constraints.MaxLength(100)
     public String tanggal_kembali;
 
+    @Constraints.Required
+    public Integer jumlah_penumpang;
+
     @Constraints.MaxLength(100)
     public String timestamp;
 
-    public static void save(Pencarian pencarian) {
-        pencarian.save();
+    public Integer sekali_jalan;
+
+    public static void save(Log_Pencarian logPencarian) {
+        logPencarian.sekali_jalan = 0;
+        logPencarian.save();
     }
 }

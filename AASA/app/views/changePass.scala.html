@@ -1,0 +1,34 @@
+@(changeForm: Form[Application.ChangePass], code: String)
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy - Ganti Sandi") {
+
+    <div id="main-content">
+        <div class="content-title">Ganti Sandi</div>
+        <div id="changeForm">
+            @helper.form(action = routes.Application.doChangePass()) {
+
+                <input type="hidden" name="code" value="@code" />
+                @if(changeForm.hasGlobalErrors()) {
+                    <div class="help-error">@changeForm.globalError().message()</div>
+                }
+
+                @helper.inputPassword(changeForm("sandi"), '_label -> "Sandi", '_showConstraints -> false, 'class -> "form-control")
+                @helper.inputPassword(changeForm("konfirmasi_sandi"), '_label -> "Konfirmasi Sandi", '_showConstraints -> false, 'class -> "form-control")
+
+                <button type="submit" class="btn btn-primary right">Ganti</button>
+                <div class="clear"></div>
+            }
+        </div>
+    </div>
+
+} {
+    <style>
+        #changeForm
+        {
+            margin-top: 20px;
+        }
+    </style>
+} {
+}

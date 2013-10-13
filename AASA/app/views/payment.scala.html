@@ -1,0 +1,124 @@
+@(pemesanan: Pemesanan, pembayaranForm: Form[Booking.Payment], totalHarga: Long, isLogin: String)
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy - Pembayaran", isLogin) {
+
+    <div id="sidebar">
+        <div id="paymentForm">
+            <form action="http://localhost/dummy/" id="payment_form">
+                <div class="form-title">Form Pembayaran</div>
+                @if(pembayaranForm.hasGlobalErrors()) {
+                    <div class="help-error">@pembayaranForm.globalError().message()</div>
+                }
+
+                @helper.inputText(pembayaranForm("nomor"), '_label -> "Nomor Kartu Kredit", '_showConstraints -> false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("nama"), '_label -> "Nama di Kartu Kredit", '_showConstraints ->false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("cvv"), '_label -> "CVV 3 Digit", '_showConstraints ->false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("valid_until"), '_label -> "Berlaku Hingga", '_showConstraints ->false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("kota"), '_label -> "Kota", '_showConstraints ->false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("alamat"), '_label -> "Alamat", '_showConstraints ->false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("kode_pos"), '_label -> "Kode Pos", '_showConstraints ->false, 'class -> "form-control")
+                @helper.inputText(pembayaranForm("telepon"), '_label -> "Telepon", '_showConstraints ->false, 'class -> "form-control")
+
+                <button id="submit-payment" type="submit" class="btn btn-primary right">Bayar</button>
+                <div class="clear"></div>
+            </form>
+        </div>
+    </div>
+    <div id="main-content">
+        <div class="content-title">Detail Pembayaran</div>
+        <div id="content-description">
+            <div class="harga">
+                <div class="label-harga">
+                    Harga Tiket
+                </div>
+                <div class="value-harga">
+                    Rp @pemesanan.penerbangan.harga,00 x @pemesanan.penumpang.size()
+                </div>
+            </div>
+            <br />
+            <hr />
+            <div class="harga">
+                <div class="label-harga">
+                    Total Harga
+                </div>
+                <div class="value-harga">
+                    Rp @totalHarga,00
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <script type="text/javascript">
+        $(function() {
+            $('#valid_until').datepicker( {
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'MM yy',
+                onClose: function(dateText, inst) {
+                    var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).datepicker('setDate', new Date(year, month, 1));
+                }
+            });
+        });
+        $("#submit-payment").click(function(e) {
+            e.preventDefault();
+            $.post("http://localhost/dummy/", $("#payment_form").serialize(), function (data) {
+                data = JSON.parse(data);
+                if (data["status"]=="success")
+                {
+                    alert("Pembayaran berhasil.");
+                    window.location = "/";
+                }
+                else
+                {
+                    alert("Pembayaran gagal.");
+                }
+            }
+        }
+    </script>
+} {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/form.css")">
+    <style>
+        #main-content
+        {
+            float: left;
+            width: 570px;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #sidebar
+        {
+            float: left;
+            width: 380px;
+            padding: 10px;
+            margin-right: 20px;
+            background-color: #DEDEDE;
+        }
+        .label-harga
+        {
+            float: left;
+            width: 200px;
+        }
+        .value-harga
+        {
+            float: left;
+            width: 200px;
+        }
+        .harga
+        {
+            clear: both;
+        }
+        hr
+        {
+            border-top: 1px solid #000000 !important;
+        }
+        .ui-datepicker-calendar {
+            display: none;
+        }
+    </style>
+} {
+}

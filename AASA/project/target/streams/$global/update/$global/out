@@ -412,6 +412,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2_2.10;2.1.1->org.scalaz#scalaz-concurrent_2.10;7.0.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.specs2#specs2_2.10;2.1.1->org.scalaz#scalaz-concurrent_2.10;7.0.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [compile][0m
@@ -642,6 +647,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [runtime][0m
@@ -873,6 +883,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
@@ -1633,6 +1648,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
@@ -2181,6 +2201,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [test-internal][0m
@@ -2414,6 +2439,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-concurrent_2.10;7.0.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#sbt-plugin;2.2.0->org.specs2#specs2_2.10;2.1.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.5.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#aasa-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#aasa-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [provided->default(compile)][0m
@@ -2860,7 +2890,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.0!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3779ms :: artifacts dl 113ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3875ms :: artifacts dl 199ms[0m
 [0m[[0mdebug[0m] [0m	report for default#aasa-build;0.1-SNAPSHOT compile produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/project/target/resolution-cache/reports/default-aasa-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#aasa-build;0.1-SNAPSHOT runtime produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/project/target/resolution-cache/reports/default-aasa-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#aasa-build;0.1-SNAPSHOT test produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/project/target/resolution-cache/reports/default-aasa-build-test.xml[0m
@@ -2874,5 +2904,5 @@
 [0m[[0mdebug[0m] [0m	report for default#aasa-build;0.1-SNAPSHOT docs produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/project/target/resolution-cache/reports/default-aasa-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#aasa-build;0.1-SNAPSHOT pom produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/project/target/resolution-cache/reports/default-aasa-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#aasa-build;0.1-SNAPSHOT scala-tool produced in /media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/project/target/resolution-cache/reports/default-aasa-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (3779ms resolve - 113ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3875ms resolve - 199ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

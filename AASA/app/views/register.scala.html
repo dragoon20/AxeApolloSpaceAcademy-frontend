@@ -4,22 +4,27 @@
 
 @main("Axe Appolo Space Academy - register") {
 
+    <div id="main-content">
+        <div class="content-title">Pendaftaran Anggota Erlangga Airlines</div>
+        <div id="content-description">
+            Menjadi Anggota Erlangga Airlines berarti yang perlu dilakukan adalah
+            menyimpan rincian Anda SEKALI SAJA dan Anda dapat membukanya pada saat
+            membeli tiket di masa mendatang melalui EAirlines.co.id
+        </div>
 
-    <div id="content">
-        @helper.form(action = routes.Application.newAnggota(), 'class->"form-horizontal") {
-
-            <div class="form-title">Daftar</div>
+        @helper.form(action = routes.Application.newAnggota(), 'id -> "anggota-form", 'class->"form-horizontal") {
 
             @helper.inputText(anggotaForm("nama"), '_label -> "Nama", '_showConstraints -> false, 'class -> "form-control")
             @helper.inputPassword(anggotaForm("sandi"), '_label -> "Sandi", '_showConstraints ->false, 'class -> "form-control")
             @helper.inputPassword(anggotaForm("konfirmasi_sandi"), '_label -> "Konfirmasi Sandi", '_showConstraints ->false, 'class -> "form-control")
             @helper.inputText(anggotaForm("email"), '_label -> "Alamat Email", '_showConstraints ->false, 'class -> "form-control")
+
             @helper.inputText(anggotaForm("no_handphone"), '_label -> "Nomor Handphone", '_showConstraints ->false, 'class -> "form-control")
-            @helper.inputText(anggotaForm("alamat"), '_label -> "Alamat", '_showConstraints ->false, 'class -> "form-control")
+            @helper.textarea(anggotaForm("alamat"), '_label -> "Alamat", '_showConstraints ->false, 'class -> "form-control")
 
             <div class="form-group">
                 <div class="submit">
-                    <button type="submit" class="btn btn-primary">Daftar</button>
+                    <button type="submit" class="btn btn-primary">Daftar Sekarang Juga!</button>
                 </div>
             </div>
         }
@@ -27,6 +32,14 @@
 
 } {
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/form.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/register.css")">
 } {
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var parent = $("#no_handphone").parent();
+            parent.addClass("input-group");
+            parent.prepend('<span class="input-group-addon">+62</span>');
+        });
+    </script>
 }
 

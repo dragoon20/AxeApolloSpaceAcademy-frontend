@@ -22,6 +22,8 @@
         @extraJS
     </head>
     <body>
+        <div id="comets">
+        </div>
         <div id="wrapper">
             <div id="header">
                 <div id="logo">
@@ -31,7 +33,7 @@
                     @if(isLogin==null) {
                         <a href="/login">Login</a> / <a href="/register">Daftar</a>
                     } else {
-                        <a href="/logout">Logout</a>
+                        <a href="/profile">Profil</a> / <a href="/logout">Logout</a>
                     }
                 </div>
                 <div id="title-area">
@@ -48,9 +50,66 @@
                 @content
             </div>
             <div id="footer">
-
+                <div class="right">&copy;Copyright Badut 2013</div>
+                <div class="clear"></div>
             </div>
         </div>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var id = 0;
+                var ids = [];
+                var speeds = [];
+                var x = [];
+                var y = [];
+                var sizes = [];
+                var total = 0;
+                var lock = false;
 
+                setInterval(function() {
+                    var width = $( window ).width()*1.5;
+                    var height = $( window ).height();
+                    for (var i=0;i<total;++i)
+                    {
+                        if ((x[i] <= -1*sizes[i]) || (y[i] >= height))
+                        {
+                            x.splice(i, 1);
+                            y.splice(i, 1);
+                            speeds.splice(i, 1);
+                            sizes.splice(i, 1);
+                            $("#comet_"+ids[i]).remove();
+                            ids.splice(i, 1);
+                            i--;
+                            total--;
+                        }
+                    }
+                    var temp = Math.floor((Math.random()*100)+1);
+                    if (temp%15==0)
+                    {
+                        if (id==1000)
+                        {
+                            id = 0;
+                        }
+                        ids.push(id);
+                        id++;
+                        x.push(Math.floor((Math.random()*width)+1));
+                        speeds.push(2 + Math.floor((Math.random()*6)+1));
+                        $("#comets").append("<img id='comet_"+ids[total]+"' src='@routes.Assets.at("images/comet.png")' class='comet' />");
+                        sizes.push(50 + Math.floor((Math.random()*150)+1));
+                        y.push(-1*sizes[total]);
+                        $("#comet_"+ids[total]).css("width", sizes[total]+"px");
+                        $("#comet_"+ids[total]).css("height", sizes[total]+"px");
+                        total++;
+                    }
+                    for (var i=0;i<total;++i)
+                    {
+                        x[i] -= speeds[i];
+                        y[i] += speeds[i];
+                        $("#comet_"+ids[i]).css("left", x[i]+"px");
+                        $("#comet_"+ids[i]).css("top", y[i]+"px");
+                    }
+                }, 50);
+            });
+        </script>
     </body>
 </html>

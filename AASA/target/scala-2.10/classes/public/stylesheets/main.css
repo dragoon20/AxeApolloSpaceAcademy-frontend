@@ -1,6 +1,7 @@
 body
 {
     background-size: cover;
+    background: url(../images/bg.jpg) no-repeat center center fixed;
 }
 
 .left
@@ -24,7 +25,7 @@ body
 
 #header
 {
-    background-color: gray;
+    margin-top: 20px;
 }
 #logo
 {
@@ -54,21 +55,45 @@ body
 #login
 {
     float: right;
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
     padding: 5px;
     margin-top: 30px;
     margin-right: 80px;
 }
 
+#login a
+{
+    color: #FFFFFF;
+}
+
 #content
 {
-    background-color: #DEDEDE;
+    margin: 15px 0px;;
     padding: 10px;
+    background-color: #FFFFFF;
+}
+
+.content-title
+{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 #footer
 {
     height: 100px;
     padding: 10px;
-    background-color: cyan;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.comet
+{
+    position: fixed;
+    z-index: -1;
 }

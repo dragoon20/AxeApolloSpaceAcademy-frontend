@@ -1,0 +1,35 @@
+@(forgotForm: Form[Application.Forgot])
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy - Lupa Sandi") {
+
+    <div id="main-content">
+        <div id="content-title">Lupa Sandi Anda?</div>
+        <div id="content-description">
+            Kita semua pernah mengalaminya. Cukup masukkan info Anda di bawah ini dan kami akan mengirim email berupa rincian untuk mereset kata sandi Anda.
+        </div>
+        <div id="forgotForm">
+            @helper.form(action = routes.Application.sendChangePass()) {
+
+                @if(forgotForm.hasGlobalErrors()) {
+                    <div class="help-error">@forgotForm.globalError().message()</div>
+                }
+
+                @helper.inputText(forgotForm("email"), '_label -> "Alamat Email", '_showConstraints -> false, 'class -> "form-control")
+
+                <button type="submit" class="btn btn-primary right">Kirim</button>
+                <div class="clear"></div>
+            }
+        </div>
+    </div>
+
+} {
+    <style>
+        #forgotForm
+        {
+            margin-top: 20px;
+        }
+    </style>
+} {
+}

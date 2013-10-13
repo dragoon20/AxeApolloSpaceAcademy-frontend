@@ -6,10 +6,24 @@
 GET     /                           controllers.Application.index()
 GET     /register                   controllers.Application.register()
 POST    /register                   controllers.Application.newAnggota()
+GET     /activate                   controllers.Application.activateAnggota(activation_code:String)
 GET     /login                      controllers.Application.login()
 POST    /login                      controllers.Application.doLogin()
+GET     /forgot_pass                controllers.Application.forgotPass()
+POST    /forgot_pass                controllers.Application.sendChangePass()
+GET     /change_pass                controllers.Application.changePass(code:String)
+POST    /change_pass                controllers.Application.doChangePass()
+GET     /profile                    controllers.Application.profile()
+POST    /profile                    controllers.Application.changeAnggotaData()
 GET     /search                     controllers.Application.search()
 GET     /logout                     controllers.Application.logout()
+POST    /askRefund                  controllers.Application.askRefund()
+
+# Booking
+GET     /order                      controllers.Booking.order(id:Long, jumlah:Long)
+POST    /ordererData                controllers.Booking.addOrderer()
+POST    /passengerData              controllers.Booking.addPassenger()
+GET     /payment                    controllers.Booking.payment(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

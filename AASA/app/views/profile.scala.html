@@ -1,0 +1,128 @@
+@(anggotaForm: Form[Anggota], pemesanList: List[Pemesan], isLogin: String)
+
+@implicitField = @{ views.html.helper.FieldConstructor(templateFormInline.f) }
+
+@main("Axe Appolo Space Academy - profile", isLogin) {
+
+    <div id="main-content">
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Ubah Profil</a></li>
+                <li><a href="#tabs-2">Pemesanan Saya</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="content-title">Ubah Profil</div>
+
+                @helper.form(action = routes.Application.changeAnggotaData(), 'id -> "anggota-form", 'class->"form-horizontal") {
+
+                    @helper.inputText(anggotaForm("nama"), '_label -> "Nama", '_showConstraints -> false, 'class -> "form-control")
+                    @helper.inputText(anggotaForm("email"), '_label -> "Alamat Email", '_showConstraints ->false, 'class -> "form-control")
+
+                    @helper.inputText(anggotaForm("no_handphone"), '_label -> "Nomor Handphone", '_showConstraints ->false, 'class -> "form-control")
+                    @helper.textarea(anggotaForm("alamat"), '_label -> "Alamat", '_showConstraints ->false, 'class -> "form-control")
+
+                    <div class="form-group">
+                        <div class="submit">
+                            <button type="submit" class="btn btn-primary">Ubah Data</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div id="tabs-2">
+                <div class="content-title">Pemesanan Saya</div>
+                @for(pemesan <- pemesanList) {
+                    <div class="pemesanan">
+                        <div class="pemesanan-kode left">
+                            @pemesan.getPemesanan().penerbangan.kode_penerbangan
+                        </div>
+                        <div class="pemesanan-tanggal left">
+                            @pemesan.getPemesanan().penerbangan.tanggal
+                        </div>
+                        <div class="pemesanan-darike left">
+                            @pemesan.getPemesanan().penerbangan.bandara_asal.nama - @pemesan.getPemesanan().penerbangan.bandara_tujuan.nama
+                        </div>
+                        <div class="pemesanan-harga left">
+                            Rp @pemesan.getPemesanan().penerbangan.harga,00
+                        </div>
+                        <a class="cancel_pemesanan btn btn-primary" href="javascript:void(0)" data-pemesanan-id="@pemesan.getPemesanan().id">Refund</a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                @if(pemesanList.isEmpty()) {
+                    Anda belum pernah memesan tiket pada website Erlangga Airlines.
+                }
+            </div>
+        </div>
+    </div>
+
+} {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/form.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/register.css")">
+    <style>
+        .ui-tabs-vertical { width: 100%; border: 0px; }
+        .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+        .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+        .ui-tabs-vertical .ui-tabs-nav li a { display:block; width: 100%;}
+        .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+        .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: left; width: 780px;}
+
+        .pemesanan
+        {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #E9E16C;
+            text-align: center;
+            line-height: 30px;
+        }
+        .pemesanan:hover
+        {
+            background-color: #FEF554;
+        }
+        .pemesanan-kode
+        {
+            color: #6B95E9;
+            font-weight: bold;
+            width: 100px;
+        }
+        .pemesanan-tanggal
+        {
+            width: 100px;
+        }
+        .pemesanan-darike
+        {
+            width: 200px;
+        }
+        .pemesanan-harga
+        {
+            width: 100px;
+        }
+    </style>
+} {
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var parent = $("#no_handphone").parent();
+            parent.addClass("input-group");
+            parent.prepend('<span class="input-group-addon">+62</span>');
+
+            $(".cancel_pemesanan").click(function(e) {
+                e.preventDefault();
+                var that = $(this);
+                $.post("/askRefund", {"pemesanan_id": that.attr("data-pemesanan-id")}, function (data) {
+                    if (data["status"]=="success")
+                    {
+                        alert("Refund akan segera diproses oleh tim Erlangga Airlines.");
+                    }
+                    else
+                    {
+                        alert("Server sedang mengalami masalah, refund gagal.");
+                    }
+                });
+            });
+        });
+        $(function() {
+            $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+            $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+        });
+    </script>
+}
+

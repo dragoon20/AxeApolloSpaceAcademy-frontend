@@ -1,25 +1,26 @@
-@(bandaras: List[Bandara], pencarianForm: Form[Pencarian], isLogin: String)
+@(bandaras: List[Bandara], pencarianForm: Form[Log_Pencarian], isLogin: String)
 
 @implicitField = @{ views.html.helper.FieldConstructor(templateForm.f) }
 
 @main("Axe Appolo Space Academy", isLogin) {
     <div id="sidebar">
-        @helper.form(action = routes.Application.search()) {
+        @helper.form(action = routes.Application.search(), 'id -> "searchForm") {
 
+           <!-- <div class="choice">
+                <input name="sekali_jalan" type="radio" id="sekali_jalan" value="0" checked="true">
+                <label for="sekali_jalan">Sekali jalan</label>
+            </div>
             <div class="choice">
                 <input name="sekali_jalan" type="radio" id="pulang_pergi" value="1">
                 <label for="pulang_pergi">Pulang pergi</label>
             </div>
-            <div class="choice">
-                <input name="sekali_jalan" type="radio" id="sekali_jalan" value="0">
-                <label for="sekali_jalan">Sekali jalan</label>
-            </div>
-            <div class="clear"></div>
+            <div class="clear"></div>-->
 
             @helper.inputText(pencarianForm("asal"), '_label -> "Asal", '_showConstraints -> false, 'class -> "form-control")
             @helper.inputText(pencarianForm("tujuan"), '_label -> "Tujuan", '_showConstraints ->false, 'class -> "form-control")
             @helper.inputText(pencarianForm("tanggal_berangkat"), '_label -> "Tanggal Berangkat", '_showConstraints ->false, 'class -> "form-control")
             @helper.inputText(pencarianForm("tanggal_kembali"), '_label -> "Tanggal Kembali", '_showConstraints ->false, 'class -> "form-control")
+            @helper.select(field = pencarianForm("jumlah_penumpang"), options = Seq("1"->"1", "2"->"2", "3"->"3", "4"->"4", "5"->"5", "6"->"6", "7"->"7"), '_label -> "Jumlah Penumpang", '_showConstraints ->false, 'class -> "form-control")
 
             <div class="right">
                 <button type="submit" class="btn btn-primary">Cari</button>
@@ -27,6 +28,28 @@
             <div class="clear"></div>
         }
     </div>
+    <div id="content-main">
+        <section>
+            <div id="content_wrap" class="wrap">
+                <div id="slide_left">
+                </div>
+                <div id="content_wrap_inner">
+                    <img class="slide_item" src="@routes.Assets.at("images/1.png")" alt="gambar 1" />
+                    <img class="slide_item" src="@routes.Assets.at("images/2.png")" alt="gambar 2" />
+                    <img class="slide_item" src="@routes.Assets.at("images/3.png")" alt="gambar 3" />
+                </div>
+                <div id="slide_right">
+                </div>
+                <div class="clear"></div>
+                <div id="slide_bullet">
+                    <div class="bullet_slide active" onclick="go_to_image(1);"> </div>
+                    <div class="bullet_slide" onclick="go_to_image(2);"> </div>
+                    <div class="bullet_slide" onclick="go_to_image(3);"> </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clear"></div>
     <script>
         $.widget( "custom.catcomplete", $.ui.autocomplete, {
             _renderMenu: function( ul, items ) {
@@ -50,15 +73,14 @@
                 }
             },
         });
-        $(document).ready(function() {
-            if ($("input[name=sekali_jalan]:radio").val()==0) {
-                $('#tanggal_kembali').parent().parent().hide();
-            }
-            else {
-                $('#tanggal_kembali').parent().parent().show();
-            }
-        });
         $(function() {
+            //$("#sekali_jalan").prop("checked", true);
+            //$("#pulang_pergi").prop("checked", false);
+            $("#asal").val("");
+            $("#tujuan").val("");
+            $("#tanggal_berangkat").val("");
+            $("#tanggal_kembali").val("");
+            $('#tanggal_kembali').parent().parent().hide();
 
             var data = [
                 @for(bandara <- bandaras) {
@@ -118,15 +140,84 @@
                 numberOfMonths: 2,
                 showButtonPanel: true
             });
-            $("input[name=sekali_jalan]:radio").change(function() {
+            /*$("input[name=sekali_jalan]:radio").change(function() {
                 if ($(this).val()==0) {
                     $('#tanggal_kembali').parent().parent().hide();
                 }
                 else {
                     $('#tanggal_kembali').parent().parent().show();
                 }
-            });
+            });*/
         });
+
+        var content_wrap = document.getElementById("content_wrap");
+        content_wrap.onmouseover = function()
+        {
+            document.getElementById("slide_left").style.opacity = "1";
+            document.getElementById("slide_right").style.opacity = "1";
+        }
+
+        content_wrap.onmouseout = function()
+        {
+            document.getElementById("slide_left").style.opacity = "0";
+            document.getElementById("slide_right").style.opacity = "0";
+        }
+
+        var current_image = 1;
+        var max_image = 3;
+        var width = 696;
+        function go_to_bullet(index)
+        {
+            var bullets = document.getElementById("slide_bullet").childNodes;
+            var i = 1;
+            for (var j=0;j<bullets.length;++j)
+            {
+                if (bullets[j].nodeName!="#text")
+                {
+                    if (i==index)
+                        bullets[j].className = "bullet_slide active";
+                    else
+                        bullets[j].className = "bullet_slide";
+                        i++;
+                }
+            }
+        }
+        function next_image()
+        {
+            current_image++;
+            if (current_image > max_image)
+                current_image = 1;
+            document.getElementById("content_wrap_inner").style.left = (-1*width*(current_image-1))+"px";
+            go_to_bullet(current_image);
+        }
+        function prev_image()
+        {
+            current_image--;
+            if (current_image < 1)
+                current_image = max_image;
+            document.getElementById("content_wrap_inner").style.left = (-1*width*(current_image-1))+"px";
+            go_to_bullet(current_image);
+        }
+        document.onkeydown = function(event)
+        {
+            if (event.keyCode=="37")
+                prev_image();
+            else if (event.keyCode=="39")
+                next_image();
+        }
+        function go_to_image(index)
+        {
+            current_image = index;
+            document.getElementById("content_wrap_inner").style.left = (-1*width*(current_image-1))+"px";
+            go_to_bullet(current_image);
+        }
+        document.getElementById("slide_left").onclick = function() {prev_image()};
+        document.getElementById("slide_right").onclick = function() {next_image()};
+
+        window.onload = function()
+        {
+            setInterval(function(){next_image();}, 5500);
+        }
     </script>
 } {
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index.css")">

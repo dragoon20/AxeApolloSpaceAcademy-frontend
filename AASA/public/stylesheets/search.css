@@ -1,26 +1,65 @@
+#sidebar
+{
+    float: left;
+    width: 270px;
+    padding: 15px;
+    background-color: #DEDEDE;
+}
+
+.choice
+{
+    float: left;
+    margin-right: 15px;
+}
+
+#main-content
+{
+    float: left;
+    width: 660px;
+    margin-left: 30px;
+}
+
 .penerbangan
 {
     border: 1px solid black;
     font-size: 20px;
     padding: 20px;
     margin: 10px 0;
+    background-color: #E9E16C;
+}
+.penerbangan:hover
+{
+    background-color: #FEF554;
 }
 .nama-penerbangan
 {
     float: left;
-    width: 300px;
+    width: 160px;
     font-size: 26px;
-    color: #3333DD;
+    color: #6B95E9;
     font-weight: bold;
     line-height:50px;
 }
 .status-berangkat
 {
     float: left;
-    width: 200px;
+    width: 100px;
 }
 .status-tiba
 {
     float: left;
-    width: 200px;
+    width: 100px;
+}
+.harga-penerbangan
+{
+    float: left;
+    height: 56px;
+    line-height:50px;
+    width: 180px;
+}
+.order-penerbangan
+{
+    float: left;
+    display: block;
+    margin-top: 10px;
 }

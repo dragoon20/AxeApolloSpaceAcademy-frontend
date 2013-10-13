@@ -9,7 +9,7 @@
 		extra-scalaVersion="2.10"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20130924114526"/>
+		date="20131012150139"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="sbt-plugin">
 			<revision name="2.2.0" status="release" pubdate="20130919112601" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
@@ -61,10 +61,17 @@
 				<license name="BSD-style" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="2977" time="0" location="/opt/play-2.2.0/framework/../repository/cache/scala_2.10/sbt_0.13/com.github.mpeltonen/sbt-idea/ivy-1.5.1.xml" searched="false" origin-is-local="true" origin-location="/opt/play-2.2.0/repository/local/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.5.1/ivys/ivy.xml"/>
 				<caller organisation="com.typesafe.play" name="sbt-plugin" conf="compile" rev="1.5.1" rev-constraint-default="1.5.1" rev-constraint-dynamic="1.5.1" callerrev="2.2.0" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<caller organisation="default" name="aasa-build" conf="optional, compile, runtime, runtime-internal" rev="1.2.0" rev-constraint-default="1.2.0" rev-constraint-dynamic="1.2.0" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
 				<artifacts>
 					<artifact name="sbt-idea" type="jar" ext="jar" status="no" details="" size="337943" time="0" location="/opt/play-2.2.0/repository/local/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.5.1/jars/sbt-idea.jar">
 						<origin-location is-local="true" location="/opt/play-2.2.0/repository/local/com.github.mpeltonen/sbt-idea/scala_2.10/sbt_0.13/1.5.1/jars/sbt-idea.jar"/>
 					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.2.0" evicted="latest-revision" evicted-reason="" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" conf="default(compile), default, compile, runtime, master" position="-1">
+				<evicted-by rev="1.5.1"/>
+				<caller organisation="default" name="aasa-build" conf="optional, compile, runtime, runtime-internal" rev="1.2.0" rev-constraint-default="1.2.0" rev-constraint-dynamic="1.2.0" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<artifacts>
 				</artifacts>
 			</revision>
 		</module>

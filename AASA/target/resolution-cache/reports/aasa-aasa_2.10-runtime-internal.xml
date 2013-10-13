@@ -7,20 +7,8 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20130930203210"/>
+		date="20131013163619"/>
 	<dependencies>
-		<module organisation="mysql" name="mysql-connector-java">
-			<revision name="5.1.18" status="release" pubdate="20111003154406" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dev.mysql.com/usingmysql/java/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="65">
-				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/gpl.txt"/>
-				<metadata-artifact status="no" details="" size="2387" time="0" location="/opt/play-2.2.0/framework/../repository/cache/mysql/mysql-connector-java/ivy-5.1.18.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.18/mysql-connector-java-5.1.18.pom"/>
-				<caller organisation="aasa" name="aasa_2.10" conf="optional, compile, runtime, runtime-internal" rev="5.1.18" rev-constraint-default="5.1.18" rev-constraint-dynamic="5.1.18" callerrev="1.0-SNAPSHOT"/>
-				<artifacts>
-					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="789885" time="0" location="/opt/play-2.2.0/framework/../repository/cache/mysql/mysql-connector-java/jars/mysql-connector-java-5.1.18.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.18/mysql-connector-java-5.1.18.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="com.typesafe.play" name="play-cache_2.10">
 			<revision name="2.2.0" status="release" pubdate="20130919112601" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="63">
 				<metadata-artifact status="no" details="" size="2022" time="0" location="/opt/play-2.2.0/framework/../repository/cache/com.typesafe.play/play-cache_2.10/ivy-2.2.0.xml" searched="false" origin-is-local="true" origin-location="/opt/play-2.2.0/repository/local/com.typesafe.play/play-cache_2.10/2.2.0/ivys/ivy.xml"/>

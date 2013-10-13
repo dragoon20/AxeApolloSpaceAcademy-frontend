@@ -1,6 +1,6 @@
 // @SOURCE:/media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/conf/routes
-// @HASH:f480dae46889ff16f388a3d4a1b0c99f298078a2
-// @DATE:Tue Oct 01 00:50:36 WIT 2013
+// @HASH:e778db1c54080d3c7e4acf2d36a8c6bbc9bf1bac
+// @DATE:Mon Oct 14 00:03:14 WIT 2013
 
 
 import play.core._
@@ -41,25 +41,73 @@ private[this] lazy val controllers_Application_newAnggota2 = Route("POST", PathP
         
 
 // @LINE:9
-private[this] lazy val controllers_Application_login3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("login"))))
+private[this] lazy val controllers_Application_activateAnggota3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("activate"))))
         
 
 // @LINE:10
-private[this] lazy val controllers_Application_doLogin4 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("login"))))
+private[this] lazy val controllers_Application_login4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("login"))))
         
 
 // @LINE:11
-private[this] lazy val controllers_Application_search5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("search"))))
+private[this] lazy val controllers_Application_doLogin5 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("login"))))
         
 
 // @LINE:12
-private[this] lazy val controllers_Application_logout6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("logout"))))
+private[this] lazy val controllers_Application_forgotPass6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("forgot_pass"))))
+        
+
+// @LINE:13
+private[this] lazy val controllers_Application_sendChangePass7 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("forgot_pass"))))
+        
+
+// @LINE:14
+private[this] lazy val controllers_Application_changePass8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("change_pass"))))
         
 
 // @LINE:15
-private[this] lazy val controllers_Assets_at7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val controllers_Application_doChangePass9 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("change_pass"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.newAnggota()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """search""","""controllers.Application.search()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:16
+private[this] lazy val controllers_Application_profile10 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("profile"))))
+        
+
+// @LINE:17
+private[this] lazy val controllers_Application_changeAnggotaData11 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("profile"))))
+        
+
+// @LINE:18
+private[this] lazy val controllers_Application_search12 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("search"))))
+        
+
+// @LINE:19
+private[this] lazy val controllers_Application_logout13 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("logout"))))
+        
+
+// @LINE:20
+private[this] lazy val controllers_Application_askRefund14 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("askRefund"))))
+        
+
+// @LINE:23
+private[this] lazy val controllers_Booking_order15 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("order"))))
+        
+
+// @LINE:24
+private[this] lazy val controllers_Booking_addOrderer16 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("ordererData"))))
+        
+
+// @LINE:25
+private[this] lazy val controllers_Booking_addPassenger17 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("passengerData"))))
+        
+
+// @LINE:26
+private[this] lazy val controllers_Booking_payment18 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("payment"))))
+        
+
+// @LINE:29
+private[this] lazy val controllers_Assets_at19 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.newAnggota()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """activate""","""controllers.Application.activateAnggota(activation_code:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """forgot_pass""","""controllers.Application.forgotPass()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """forgot_pass""","""controllers.Application.sendChangePass()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """change_pass""","""controllers.Application.changePass(code:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """change_pass""","""controllers.Application.doChangePass()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.profile()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.changeAnggotaData()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """search""","""controllers.Application.search()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """askRefund""","""controllers.Application.askRefund()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """order""","""controllers.Booking.order(id:Long, jumlah:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ordererData""","""controllers.Booking.addOrderer()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """passengerData""","""controllers.Booking.addPassenger()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """payment""","""controllers.Booking.payment(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -92,39 +140,135 @@ case controllers_Application_newAnggota2(params) => {
         
 
 // @LINE:9
-case controllers_Application_login3(params) => {
+case controllers_Application_activateAnggota3(params) => {
+   call(params.fromQuery[String]("activation_code", None)) { (activation_code) =>
+        invokeHandler(controllers.Application.activateAnggota(activation_code), HandlerDef(this, "controllers.Application", "activateAnggota", Seq(classOf[String]),"GET", """""", Routes.prefix + """activate"""))
+   }
+}
+        
+
+// @LINE:10
+case controllers_Application_login4(params) => {
    call { 
         invokeHandler(controllers.Application.login(), HandlerDef(this, "controllers.Application", "login", Nil,"GET", """""", Routes.prefix + """login"""))
    }
 }
         
 
-// @LINE:10
-case controllers_Application_doLogin4(params) => {
+// @LINE:11
+case controllers_Application_doLogin5(params) => {
    call { 
         invokeHandler(controllers.Application.doLogin(), HandlerDef(this, "controllers.Application", "doLogin", Nil,"POST", """""", Routes.prefix + """login"""))
    }
 }
         
 
-// @LINE:11
-case controllers_Application_search5(params) => {
+// @LINE:12
+case controllers_Application_forgotPass6(params) => {
+   call { 
+        invokeHandler(controllers.Application.forgotPass(), HandlerDef(this, "controllers.Application", "forgotPass", Nil,"GET", """""", Routes.prefix + """forgot_pass"""))
+   }
+}
+        
+
+// @LINE:13
+case controllers_Application_sendChangePass7(params) => {
+   call { 
+        invokeHandler(controllers.Application.sendChangePass(), HandlerDef(this, "controllers.Application", "sendChangePass", Nil,"POST", """""", Routes.prefix + """forgot_pass"""))
+   }
+}
+        
+
+// @LINE:14
+case controllers_Application_changePass8(params) => {
+   call(params.fromQuery[String]("code", None)) { (code) =>
+        invokeHandler(controllers.Application.changePass(code), HandlerDef(this, "controllers.Application", "changePass", Seq(classOf[String]),"GET", """""", Routes.prefix + """change_pass"""))
+   }
+}
+        
+
+// @LINE:15
+case controllers_Application_doChangePass9(params) => {
+   call { 
+        invokeHandler(controllers.Application.doChangePass(), HandlerDef(this, "controllers.Application", "doChangePass", Nil,"POST", """""", Routes.prefix + """change_pass"""))
+   }
+}
+        
+
+// @LINE:16
+case controllers_Application_profile10(params) => {
+   call { 
+        invokeHandler(controllers.Application.profile(), HandlerDef(this, "controllers.Application", "profile", Nil,"GET", """""", Routes.prefix + """profile"""))
+   }
+}
+        
+
+// @LINE:17
+case controllers_Application_changeAnggotaData11(params) => {
+   call { 
+        invokeHandler(controllers.Application.changeAnggotaData(), HandlerDef(this, "controllers.Application", "changeAnggotaData", Nil,"POST", """""", Routes.prefix + """profile"""))
+   }
+}
+        
+
+// @LINE:18
+case controllers_Application_search12(params) => {
    call { 
         invokeHandler(controllers.Application.search(), HandlerDef(this, "controllers.Application", "search", Nil,"GET", """""", Routes.prefix + """search"""))
    }
 }
         
 
-// @LINE:12
-case controllers_Application_logout6(params) => {
+// @LINE:19
+case controllers_Application_logout13(params) => {
    call { 
         invokeHandler(controllers.Application.logout(), HandlerDef(this, "controllers.Application", "logout", Nil,"GET", """""", Routes.prefix + """logout"""))
    }
 }
         
 
-// @LINE:15
-case controllers_Assets_at7(params) => {
+// @LINE:20
+case controllers_Application_askRefund14(params) => {
+   call { 
+        invokeHandler(controllers.Application.askRefund(), HandlerDef(this, "controllers.Application", "askRefund", Nil,"POST", """""", Routes.prefix + """askRefund"""))
+   }
+}
+        
+
+// @LINE:23
+case controllers_Booking_order15(params) => {
+   call(params.fromQuery[Long]("id", None), params.fromQuery[Long]("jumlah", None)) { (id, jumlah) =>
+        invokeHandler(controllers.Booking.order(id, jumlah), HandlerDef(this, "controllers.Booking", "order", Seq(classOf[Long], classOf[Long]),"GET", """ Booking""", Routes.prefix + """order"""))
+   }
+}
+        
+
+// @LINE:24
+case controllers_Booking_addOrderer16(params) => {
+   call { 
+        invokeHandler(controllers.Booking.addOrderer(), HandlerDef(this, "controllers.Booking", "addOrderer", Nil,"POST", """""", Routes.prefix + """ordererData"""))
+   }
+}
+        
+
+// @LINE:25
+case controllers_Booking_addPassenger17(params) => {
+   call { 
+        invokeHandler(controllers.Booking.addPassenger(), HandlerDef(this, "controllers.Booking", "addPassenger", Nil,"POST", """""", Routes.prefix + """passengerData"""))
+   }
+}
+        
+
+// @LINE:26
+case controllers_Booking_payment18(params) => {
+   call(params.fromQuery[Long]("id", None)) { (id) =>
+        invokeHandler(controllers.Booking.payment(id), HandlerDef(this, "controllers.Booking", "payment", Seq(classOf[Long]),"GET", """""", Routes.prefix + """payment"""))
+   }
+}
+        
+
+// @LINE:29
+case controllers_Assets_at19(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }
