@@ -1,0 +1,27 @@
+2013-10-14 00:37:40,581 - [INFO] - from play in main 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-14 00:37:41,186 - [INFO] - from play in main 
+Application started (Prod)
+
+2013-10-14 00:37:41,267 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-10-14 00:41:17,538 - [INFO] - from play in main 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-14 00:41:18,129 - [INFO] - from play in main 
+Application started (Prod)
+
+2013-10-14 00:41:18,225 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-10-14 00:52:08,735 - [INFO] - from play in main 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-14 00:52:09,304 - [INFO] - from play in main 
+Application started (Prod)
+
+2013-10-14 00:52:09,384 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
