@@ -1,6 +1,7 @@
 package models;
 
 import controllers.Application;
+import helpers.DuplicateEmailValidator;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.CharSet;
 import play.data.validation.Constraints;
@@ -34,6 +35,7 @@ public class Anggota extends Model {
     @Constraints.Required
     @Constraints.MaxLength(200)
     @Constraints.Email
+    @Constraints.ValidateWith(DuplicateEmailValidator.class)
     public String email;
 
     @Constraints.Required

@@ -25,3 +25,12 @@ Application started (Prod)
 2013-10-14 00:52:09,384 - [INFO] - from play in main 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
+2013-10-15 19:45:49,862 - [INFO] - from play in main 
+database [default] connected at jdbc:mysql://localhost/AASA
+
+2013-10-15 19:45:54,270 - [INFO] - from play in main 
+Application started (Prod)
+
+2013-10-15 19:45:55,053 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+

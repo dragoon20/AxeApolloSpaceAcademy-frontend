@@ -6,6 +6,7 @@ import com.typesafe.plugin.MailerPlugin;
 import models.*;
 import play.data.DynamicForm;
 import play.data.Form;
+import play.data.validation.Constraints;
 import play.db.ebean.Transactional;
 import play.libs.Json;
 import play.mvc.*;
@@ -75,9 +76,16 @@ public class Application extends Controller {
 
     public static class DataAnggota {
 
+        @Constraints.Required
         public String nama;
+
+        @Constraints.Required
         public String email;
+
+        @Constraints.Required
         public String no_handphone;
+
+        @Constraints.Required
         public String alamat;
 
         public String validate() {
@@ -141,12 +149,19 @@ public class Application extends Controller {
     public static Result changeAnggotaData() {
         Form<DataAnggota> filledForm = Form.form(DataAnggota.class).bindFromRequest();
 
-        DataAnggota anggota = filledForm.get();
-        Anggota anggota_logged = Anggota.findByEmail(session("email"));
-        anggota_logged.update(anggota);
-        anggota_logged.no_handphone = anggota_logged.no_handphone.substring(3);
+        if (filledForm.hasErrors())
+        {
+            return redirect("/profile");
+        }
+        else
+        {
+            DataAnggota anggota = filledForm.get();
+            Anggota anggota_logged = Anggota.findByEmail(session("email"));
+            anggota_logged.update(anggota);
+            anggota_logged.no_handphone = anggota_logged.no_handphone.substring(3);
 
-        return redirect("/profile");
+            return redirect("/profile");
+        }
     }
 
     public static Result search() {

@@ -1,6 +1,6 @@
 // @SOURCE:/media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/conf/routes
-// @HASH:e778db1c54080d3c7e4acf2d36a8c6bbc9bf1bac
-// @DATE:Mon Oct 14 00:03:14 WIT 2013
+// @HASH:f06565b0eb7d894b1df8ad6f2cd859981efde6fa
+// @DATE:Tue Oct 15 20:31:13 WIT 2013
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,8 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:29
+// @LINE:30
+// @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
@@ -35,6 +36,7 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
+// @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
@@ -42,15 +44,15 @@ package controllers {
 class ReverseBooking {
     
 
-// @LINE:26
-def payment(id:Long): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "payment" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+// @LINE:25
+def addPassenger(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "passengerData")
 }
                                                 
 
-// @LINE:23
-def order(id:Long, jumlah:Long): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "order" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)), Some(implicitly[QueryStringBindable[Long]].unbind("jumlah", jumlah)))))
+// @LINE:26
+def payment(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "payment" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
 }
                                                 
 
@@ -60,20 +62,26 @@ def addOrderer(): Call = {
 }
                                                 
 
-// @LINE:25
-def addPassenger(): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "passengerData")
+// @LINE:23
+def order(id:Long, jumlah:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "order" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)), Some(implicitly[QueryStringBindable[Long]].unbind("jumlah", jumlah)))))
+}
+                                                
+
+// @LINE:27
+def sendBooking(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "payment")
 }
                                                 
     
 }
                           
 
-// @LINE:29
+// @LINE:30
 class ReverseAssets {
     
 
-// @LINE:29
+// @LINE:30
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -196,7 +204,8 @@ def login(): Call = {
                   
 
 
-// @LINE:29
+// @LINE:30
+// @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
@@ -218,6 +227,7 @@ def login(): Call = {
 // @LINE:6
 package controllers.javascript {
 
+// @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
@@ -225,23 +235,23 @@ package controllers.javascript {
 class ReverseBooking {
     
 
+// @LINE:25
+def addPassenger : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Booking.addPassenger",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "passengerData"})
+      }
+   """
+)
+                        
+
 // @LINE:26
 def payment : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Booking.payment",
    """
       function(id) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "payment" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id)])})
-      }
-   """
-)
-                        
-
-// @LINE:23
-def order : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Booking.order",
-   """
-      function(id,jumlah) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "order" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id), (""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("jumlah", jumlah)])})
       }
    """
 )
@@ -258,12 +268,23 @@ def addOrderer : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:25
-def addPassenger : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Booking.addPassenger",
+// @LINE:23
+def order : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Booking.order",
+   """
+      function(id,jumlah) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "order" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id), (""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("jumlah", jumlah)])})
+      }
+   """
+)
+                        
+
+// @LINE:27
+def sendBooking : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Booking.sendBooking",
    """
       function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "passengerData"})
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "payment"})
       }
    """
 )
@@ -272,11 +293,11 @@ def addPassenger : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:29
+// @LINE:30
 class ReverseAssets {
     
 
-// @LINE:29
+// @LINE:30
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -479,7 +500,8 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:29
+// @LINE:30
+// @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
@@ -502,6 +524,7 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
+// @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
@@ -509,15 +532,15 @@ package controllers.ref {
 class ReverseBooking {
     
 
-// @LINE:26
-def payment(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Booking.payment(id), HandlerDef(this, "controllers.Booking", "payment", Seq(classOf[Long]), "GET", """""", _prefix + """payment""")
+// @LINE:25
+def addPassenger(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Booking.addPassenger(), HandlerDef(this, "controllers.Booking", "addPassenger", Seq(), "POST", """""", _prefix + """passengerData""")
 )
                       
 
-// @LINE:23
-def order(id:Long, jumlah:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Booking.order(id, jumlah), HandlerDef(this, "controllers.Booking", "order", Seq(classOf[Long], classOf[Long]), "GET", """ Booking""", _prefix + """order""")
+// @LINE:26
+def payment(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Booking.payment(id), HandlerDef(this, "controllers.Booking", "payment", Seq(classOf[Long]), "GET", """""", _prefix + """payment""")
 )
                       
 
@@ -527,20 +550,26 @@ def addOrderer(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:25
-def addPassenger(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Booking.addPassenger(), HandlerDef(this, "controllers.Booking", "addPassenger", Seq(), "POST", """""", _prefix + """passengerData""")
+// @LINE:23
+def order(id:Long, jumlah:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Booking.order(id, jumlah), HandlerDef(this, "controllers.Booking", "order", Seq(classOf[Long], classOf[Long]), "GET", """ Booking""", _prefix + """order""")
+)
+                      
+
+// @LINE:27
+def sendBooking(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Booking.sendBooking(), HandlerDef(this, "controllers.Booking", "sendBooking", Seq(), "POST", """""", _prefix + """payment""")
 )
                       
     
 }
                           
 
-// @LINE:29
+// @LINE:30
 class ReverseAssets {
     
 
-// @LINE:29
+// @LINE:30
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )

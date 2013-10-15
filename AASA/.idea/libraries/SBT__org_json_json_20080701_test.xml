@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.json:json:20080701:test">
+    <CLASSES>
+      <root url="jar:///opt/play-2.2.0/repository/local/org.json/json/20080701/jars/json.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

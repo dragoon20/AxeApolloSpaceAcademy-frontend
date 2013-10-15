@@ -66,19 +66,28 @@
         });
         $("#submit-payment").click(function(e) {
             e.preventDefault();
-            $.post("http://localhost/dummy/", $("#payment_form").serialize(), function (data) {
+            $.post("http://localhost/dummy/index.php", $("#payment_form").serialize(), function (data) {
                 data = JSON.parse(data);
                 if (data["status"]=="success")
                 {
-                    alert("Pembayaran berhasil.");
-                    window.location = "/";
+                    $.post("/payment", {id: @pemesanan.id}, function (data) {
+                        if (data["status"]=="success")
+                        {
+                            alert("Pembayaran berhasil.");
+                            window.location = "/";
+                        }
+                        else
+                        {
+                            alert("Pembayaran gagal.");
+                        }
+                    });
                 }
                 else
                 {
                     alert("Pembayaran gagal.");
                 }
-            }
-        }
+            });
+        });
     </script>
 } {
     <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/form.css")">

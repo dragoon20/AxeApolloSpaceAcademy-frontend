@@ -3,6 +3,7 @@ package controllers;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.*;
 import play.api.libs.json.JsPath;
+import play.data.DynamicForm;
 import play.data.Form;
 import play.db.ebean.Transactional;
 import play.libs.Json;
@@ -98,6 +99,12 @@ public class Booking extends Controller {
     }
 
     public static Result sendBooking() {
-        return TODO;
+        DynamicForm form = DynamicForm.form().bindFromRequest();
+        Long id = Long.parseLong(form.get("id"));
+        Pemesanan.makePaid(id);
+
+        ObjectNode result = Json.newObject();
+        result.put("status", "success");
+        return ok(result);
     }
 }

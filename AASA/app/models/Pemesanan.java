@@ -32,6 +32,8 @@ public class Pemesanan extends Model{
     @Constraints.MaxLength(100)
     public String kode_booking;
 
+    public Integer is_paid;
+
     @ManyToOne
     public Penerbangan penerbangan;
 
@@ -64,7 +66,14 @@ public class Pemesanan extends Model{
             }
         }
         pemesanan.kode_booking = sb.toString();
+        pemesanan.is_paid = 0;
         pemesanan.save();
         return pemesanan;
+    }
+
+    public static void makePaid(Long id) {
+        Pemesanan pemesanan = find.byId(id);
+        pemesanan.is_paid = 1;
+        pemesanan.update();
     }
 }

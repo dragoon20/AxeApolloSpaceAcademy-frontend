@@ -1,6 +1,6 @@
 // @SOURCE:/media/Data/Project/AxeApolloSpaceAcademy/AxeApolloSpaceAcademy-frontend/AASA/conf/routes
-// @HASH:e778db1c54080d3c7e4acf2d36a8c6bbc9bf1bac
-// @DATE:Mon Oct 14 00:03:14 WIT 2013
+// @HASH:f06565b0eb7d894b1df8ad6f2cd859981efde6fa
+// @DATE:Tue Oct 15 20:31:13 WIT 2013
 
 
 import play.core._
@@ -104,10 +104,14 @@ private[this] lazy val controllers_Booking_addPassenger17 = Route("POST", PathPa
 private[this] lazy val controllers_Booking_payment18 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("payment"))))
         
 
-// @LINE:29
-private[this] lazy val controllers_Assets_at19 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:27
+private[this] lazy val controllers_Booking_sendBooking19 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("payment"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.newAnggota()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """activate""","""controllers.Application.activateAnggota(activation_code:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """forgot_pass""","""controllers.Application.forgotPass()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """forgot_pass""","""controllers.Application.sendChangePass()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """change_pass""","""controllers.Application.changePass(code:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """change_pass""","""controllers.Application.doChangePass()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.profile()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.changeAnggotaData()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """search""","""controllers.Application.search()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """askRefund""","""controllers.Application.askRefund()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """order""","""controllers.Booking.order(id:Long, jumlah:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ordererData""","""controllers.Booking.addOrderer()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """passengerData""","""controllers.Booking.addPassenger()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """payment""","""controllers.Booking.payment(id:Long)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:30
+private[this] lazy val controllers_Assets_at20 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.newAnggota()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """activate""","""controllers.Application.activateAnggota(activation_code:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """forgot_pass""","""controllers.Application.forgotPass()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """forgot_pass""","""controllers.Application.sendChangePass()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """change_pass""","""controllers.Application.changePass(code:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """change_pass""","""controllers.Application.doChangePass()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.profile()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.changeAnggotaData()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """search""","""controllers.Application.search()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""controllers.Application.logout()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """askRefund""","""controllers.Application.askRefund()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """order""","""controllers.Booking.order(id:Long, jumlah:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """ordererData""","""controllers.Booking.addOrderer()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """passengerData""","""controllers.Booking.addPassenger()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """payment""","""controllers.Booking.payment(id:Long)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """payment""","""controllers.Booking.sendBooking()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -267,8 +271,16 @@ case controllers_Booking_payment18(params) => {
 }
         
 
-// @LINE:29
-case controllers_Assets_at19(params) => {
+// @LINE:27
+case controllers_Booking_sendBooking19(params) => {
+   call { 
+        invokeHandler(controllers.Booking.sendBooking(), HandlerDef(this, "controllers.Booking", "sendBooking", Nil,"POST", """""", Routes.prefix + """payment"""))
+   }
+}
+        
+
+// @LINE:30
+case controllers_Assets_at20(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

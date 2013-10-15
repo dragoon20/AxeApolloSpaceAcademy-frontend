@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.hamcrest:hamcrest-core:1.3:test">
+    <CLASSES>
+      <root url="jar:///opt/play-2.2.0/repository/local/org.hamcrest/hamcrest-core/1.3/jars/hamcrest-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
